@@ -18,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // 2. If the cookie exists, increment the value and update the cookie
   // 3. If the cookie does not exist, create it and set the value to 1
   // 4. Display the count on the webpage
-
   // your code here
+
+  let count = getCookie("count")
+  count = count ? parseInt(count) + 1 : 1
+  setCookie("count", count, 7)
+  let displayElement = document.createElement('p');
+  displayElement.textContent = `page visits: ${count}`;
+  document.body.appendChild(displayElement)
 });
